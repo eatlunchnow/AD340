@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button toastButton1;
     private Button toastButton2;
+    private Button movieButton;
     public static final String EXTRA_TEXT = "com.zoom.kiki.outofline.EXTRA_TEXT";
 
     @Override
@@ -25,12 +27,21 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         toastButton1 = (Button) findViewById(R.id.toastButton1);
         toastButton2 = (Button) findViewById(R.id.toastButton2);
+        movieButton = (Button) findViewById(R.id.movieButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSecondActivity();
             }
+        });
+
+        movieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                openMovieActivity();
+            }
+
         });
 
         toastButton1.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra(EXTRA_TEXT, text);
+        startActivity(intent);
+    }
+
+    public void openMovieActivity(){
+        Intent intent = new Intent(this, MovieActivity.class);
         startActivity(intent);
     }
 }

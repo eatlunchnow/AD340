@@ -77,11 +77,11 @@
 
     <Button
         android:id="@+id/toastButton1"
-        android:layout_width="277dp"
-        android:layout_height="60dp"
+        android:layout_width="76dp"
+        android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-98dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="145dp"
         android:layout_toStartOf="@+id/button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
@@ -91,17 +91,45 @@
 
     <Button
         android:id="@+id/toastButton2"
-        android:layout_width="277dp"
-        android:layout_height="60dp"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-99dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="56dp"
         android:layout_toStartOf="@+id/button"
         android:backgroundTint="@android:color/background_light"
         android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
         android:text="Show Toast 2"
-        android:textStyle="normal"/>
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/lastButton1"
+        android:layout_width="76dp"
+        android:layout_height="74dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="65dp"
+        android:layout_toStartOf="@+id/button"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Last Button"
+        android:textColor="@android:color/holo_red_light"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/movieButton"
+        android:layout_width="76dp"
+        android:layout_height="74dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="133dp"
+        android:layout_toStartOf="@+id/button"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Movies"
+        android:textColor="@android:color/holo_red_light"
+        android:textStyle="italic" />
 
 
 

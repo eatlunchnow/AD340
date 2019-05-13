@@ -42,12 +42,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:text="3. She loves a good deal."
         android:textColor="@android:color/black"
-        android:textSize="25sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/EditText1"
@@ -56,7 +54,7 @@
         android:layout_alignBottom="@+id/button"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="-1dp" />
 
     <Button
         android:id="@+id/button"
@@ -66,9 +64,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="192dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="206dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="266dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:fontFamily="sans-serif"
         android:text="Send Text"
@@ -80,8 +78,8 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="145dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="202dp"
         android:layout_toStartOf="@+id/button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
@@ -94,8 +92,8 @@
         android:layout_width="75dp"
         android:layout_height="79dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="63dp"
         android:layout_toStartOf="@+id/button"
         android:backgroundTint="@android:color/background_light"
         android:fontFamily="serif-monospace"
@@ -108,9 +106,11 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="65dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:layout_marginBottom="56dp"
+        android:layout_toStartOf="@+id/toastButton2"
+        android:layout_toLeftOf="@+id/toastButton2"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Last Button"
@@ -122,15 +122,22 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="94dp"
-        android:layout_marginBottom="133dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="190dp"
+        android:layout_toStartOf="@+id/toastButton1"
+        android:layout_toLeftOf="@+id/toastButton1"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Movies"
         android:textColor="@android:color/holo_red_light"
         android:textStyle="italic" />
 
+    <include
+        layout = "@layout/app_bar"
+        android:id="@+id/app_bar">
+
+    </include>
 
 
 </RelativeLayout>

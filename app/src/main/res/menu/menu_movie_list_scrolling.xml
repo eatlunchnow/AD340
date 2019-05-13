@@ -3,6 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.zoom.kiki.outofline.MovieListScrollingActivity">
     <item
+        android:id="@+id/list_settings"
+        android:title="@string/list_name"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/about_settings"
+        android:title="@string/about_name"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/info_icon"
+        android:icon="@drawable/ic_baseline_info_24px"
+        android:title="About page"
+        app:showAsAction="always">
+    </item>
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

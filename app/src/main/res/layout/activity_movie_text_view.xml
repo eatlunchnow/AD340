@@ -12,5 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="#000" />
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+
+    </include>
+
 
 </LinearLayout>

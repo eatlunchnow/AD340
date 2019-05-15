@@ -3,9 +3,13 @@ package com.zoom.kiki.outofline;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Movie;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -61,6 +65,14 @@ public class MovieActivity extends AppCompatActivity {
 
         MoviesListAdapter adapter = new MoviesListAdapter(this, movies);
         movieList.setAdapter(adapter);
+        //adding toolbar
+        Toolbar toolbar = findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Horror Movies");
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         MovieListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -76,6 +88,13 @@ public class MovieActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_movie_list_scrolling, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 
@@ -105,6 +124,35 @@ public class MovieActivity extends AppCompatActivity {
 
             return rowView;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        switch(item.getItemId()){
+            case R.id.list_settings:
+                Intent list = new Intent(this, MovieActivity.class);
+                startActivity(list);
+                break;
+            case R.id.about_settings:
+                Intent about = new Intent(this, About.class);
+                startActivity(about);
+                break;
+            case R.id.info_icon:
+                Intent aboutIcon = new Intent(this, About.class);
+                startActivity(aboutIcon);
+                break;
+
+
+
+            default:
+
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

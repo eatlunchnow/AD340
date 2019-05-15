@@ -91,4 +91,9 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="about_name">About</string>
+    <string name="about_app_description">Out Of Line is a free movie app which offers a great collection of movies. The app presents you with a wall ofree movies, sorted by categories</string>
+    <string name="about_title">About Out Of Line</string>
+    <string name="list_name">Horror Movies</string>
+    <string name="about_page">About Page</string>
 </resources>

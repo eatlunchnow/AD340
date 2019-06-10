@@ -20,6 +20,7 @@ public class SecondActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
+
         TextView textview1 = (TextView) findViewById(R.id.textView1);
 
         textview1.setText(text);
@@ -37,5 +38,4 @@ public class SecondActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-
 }

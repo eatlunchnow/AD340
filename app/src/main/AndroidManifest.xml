@@ -18,10 +18,10 @@
         <activity
             android:name=".About"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MovieActivity" />
-        <activity android:name=".CamActivity"/>
-        android:theme="@style/AppTheme">
-        roid:parentActivityName=".MainActivity"/>
+        <activity android:name=".MovieActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".CamActivity"
+        android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SecondActivity"
             android:parentActivityName=".MainActivity" />

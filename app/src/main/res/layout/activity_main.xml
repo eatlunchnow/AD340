@@ -76,7 +76,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/toastButton1"
+        android:id="@+id/mapButton"
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
@@ -85,7 +85,7 @@
         android:layout_toStartOf="@+id/button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Show Toast 1"
+        android:text="Map"
         android:textColor="@android:color/holo_red_light"
         android:textStyle="italic" />
 

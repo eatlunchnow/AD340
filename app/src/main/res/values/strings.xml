@@ -96,5 +96,7 @@
     <string name="about_title">About Out Of Line</string>
     <string name="list_name">Horror Movies</string>
     <string name="about_page">About Page</string>
+    <string name="camera_page">Camera Page</string>
+    <string name="map_page">Map Page</string>
     <string name="button">Click Here</string>
 </resources>

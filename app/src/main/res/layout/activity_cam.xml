@@ -7,11 +7,12 @@
     tools:context=".CamActivity">
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:id="@+id/button"
-        android:layout_marginBottom="10dp"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/button" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,5 +26,10 @@
             android:id="@+id/fetcheddata"
             android:hint="Data will appear below"/>
     </ScrollView>
+
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar">
+    </include>
 
 </RelativeLayout>

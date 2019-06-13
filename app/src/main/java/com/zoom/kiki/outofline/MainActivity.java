@@ -28,7 +28,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
-    private Button toastButton1;
+    private Button mapButton;
     private Button toastButton2;
     private Button movieButton;
     private Button camButton;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         button = (Button) findViewById(R.id.button);
-        toastButton1 = (Button) findViewById(R.id.toastButton1);
+        mapButton = (Button) findViewById(R.id.mapButton);
         toastButton2 = (Button) findViewById(R.id.toastButton2);
         movieButton = (Button) findViewById(R.id.movieButton);
         camButton = (Button) findViewById(R.id.camButton);
@@ -73,7 +73,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        toastButton1.setOnClickListener(new View.OnClickListener() {
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                openMapActivity();
+            }
+
+        });
+
+        /*mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showToast();
@@ -89,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         toastButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,6 +162,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openMapActivity(){
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -183,6 +196,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.info_icon:
                 Intent aboutIcon = new Intent(this, About.class);
                 startActivity(aboutIcon);
+                break;
+            case R.id.cam_settings:
+                Intent camera = new Intent(this, CamActivity.class);
+                startActivity(camera);
+                break;
+            case R.id.map_settings:
+                Intent map = new Intent(this, MapActivity.class);
+                startActivity(map);
                 break;
 
 

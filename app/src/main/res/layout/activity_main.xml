@@ -15,7 +15,7 @@
         android:textColor="@android:color/black"
         android:textSize="35sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="cursive"
         />
 
@@ -45,33 +45,26 @@
         android:layout_marginTop="200dp"
         android:text="3. She loves a good deal."
         android:textColor="@android:color/black"
-        android:textSize="25sp" />
+        android:textSize="25sp" /><![CDATA[
 
-    <EditText
-        android:id="@+id/EditText1"
-        android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="-1dp" />
+    android:layout_marginBottom="-1dp" />
 
-        android:layout_marginBottom="-1dp" />
+    ]]>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/back_button"
+        android:layout_width="73dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="192dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="206dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="251dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:fontFamily="sans-serif"
-        android:text="Send Text"
+        android:text="Back"
         android:textColor="@android:color/holo_blue_bright"
         android:textStyle="bold" />
 
@@ -80,9 +73,9 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="145dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="115dp"
+        android:layout_toStartOf="@+id/back_button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Map"
@@ -91,12 +84,12 @@
 
     <Button
         android:id="@+id/toastButton2"
-        android:layout_width="75dp"
-        android:layout_height="79dp"
+        android:layout_width="76dp"
+        android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="56dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="-81dp"
+        android:layout_marginBottom="122dp"
+        android:layout_toStartOf="@+id/back_button"
         android:backgroundTint="@android:color/background_light"
         android:fontFamily="serif-monospace"
         android:text="Show Toast 2"
@@ -108,9 +101,9 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="65dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="119dp"
+        android:layout_toStartOf="@+id/back_button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Camera List"
@@ -122,9 +115,9 @@
         android:layout_width="76dp"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="94dp"
-        android:layout_marginBottom="133dp"
-        android:layout_toStartOf="@+id/button"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="119dp"
+        android:layout_toStartOf="@+id/back_button"
         android:backgroundTint="@android:color/holo_green_light"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Movies"
@@ -136,6 +129,64 @@
         android:id="@+id/app_bar">
     </include>
 
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="332dp"
+        android:ems="10"
+        android:hint="E-mail address"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="273dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="272dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/signin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="222dp"
+        android:text="Sign In" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="164dp"
+        android:layout_marginBottom="228dp"
+        android:text="Register" />
 
 
 </RelativeLayout>

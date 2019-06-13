@@ -5,8 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,14 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 
 public class CamActivity extends AppCompatActivity {
 
@@ -40,7 +30,7 @@ public class CamActivity extends AppCompatActivity {
         }
 
 
-        click = (Button) findViewById(R.id.button);
+        click = (Button) findViewById(R.id.back_button);
         data = (TextView) findViewById(R.id.fetcheddata);
 
 

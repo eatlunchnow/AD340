@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -16,12 +18,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +48,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.IOException;
+import java.util.List;
+
 
 public class MapActivity extends FragmentActivity implements
         OnMapReadyCallback,
@@ -57,6 +64,8 @@ public class MapActivity extends FragmentActivity implements
     private Location lastLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
+    private double latitude, longitude;
+    private int proximityRadius = 10000;
 
 
     @Override
@@ -73,6 +82,87 @@ public class MapActivity extends FragmentActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+    public void onClick(View view){
+
+        String weedShop = "Cannabis Store";
+        Object transferData[] = new Object[2];
+        PlacesNearby placesNearby = new PlacesNearby();
+
+
+
+        switch(view.getId()){
+            case R.id.locationSearchButton:
+                EditText addressField = (EditText) findViewById(R.id.locationSearch);
+                String address = addressField.getText().toString();
+
+                List<Address> addressList = null;
+                MarkerOptions userMarkerOptions = new MarkerOptions();
+
+                if(!TextUtils.isEmpty(address)){
+                    Geocoder geocoder = new Geocoder(this);
+
+                    try {
+                        addressList = geocoder.getFromLocationName(address, 6);
+
+                        if(addressList != null){
+                            for(int i = 0; i < addressList.size(); i++){
+                                Address userAddress = addressList.get(i);
+                                LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
+
+                                userMarkerOptions.position(latLng);
+                                userMarkerOptions.title(address);
+                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                                mMap.addMarker(userMarkerOptions);
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+
+
+                            }
+                        } else {
+                            Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+                } else{
+                    Toast.makeText(this, "Please write any location name", Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+
+            case R.id.cannabis_search_nearby:
+                mMap.clear();
+                String url = getURL(latitude, longitude, weedShop);
+                transferData[0] = mMap;
+                transferData[1] = url;
+
+                placesNearby.execute(transferData);
+                Toast.makeText(this, "Searching for nearby Cannabis Stores", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Showing nearby Cannabis Stores", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+    }
+
+    private String getURL(double latitude, double longitude, String nearbyPlace){
+
+        StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleURL.append("location" + latitude + ", " + longitude);
+        googleURL.append("&radius=" + proximityRadius);
+        googleURL.append("&type=" + nearbyPlace);
+        googleURL.append("&sensor=true");
+        googleURL.append("&key=" + "AIzaSyAt5G_Z5mZLoYyvnlEr07CHZxRN_6nzRio");
+
+        Log.d("MapActivity", "url = " + googleURL.toString());
+
+        return googleURL.toString();
+
     }
 
 
@@ -133,7 +223,7 @@ public class MapActivity extends FragmentActivity implements
                         mMap.setMyLocationEnabled(true);
                     }
                 } else {
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
 
                 return;
@@ -176,6 +266,10 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     public void onLocationChanged(Location location) {
+
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
         lastLocation = location;
 
         if (currentUserLocationMarker != null){
@@ -186,7 +280,7 @@ public class MapActivity extends FragmentActivity implements
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("User's current location");
+        markerOptions.title("User current location");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
 
         currentUserLocationMarker = mMap.addMarker(markerOptions);
